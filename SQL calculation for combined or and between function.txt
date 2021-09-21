@@ -1,0 +1,2 @@
+select * from employees where department in ('hr','it','sales') and salary between 1500 and 2000
+
