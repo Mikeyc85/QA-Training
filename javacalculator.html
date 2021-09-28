@@ -1,0 +1,85 @@
+<html>
+
+<script>
+    let first=0;
+    let operator="";
+function displayresult(){
+    let result=0;
+    let second=parseInt(document.getElementById("screen").value);
+        if (operator=="+"){
+            result=first+second;
+        }
+        if (operator=="-"){
+            result=first-second;
+        }
+        if (operator=="x"){
+            result=first*second;
+        }
+        if (operator=="/"){
+            result=first/second;
+        }
+    document.getElementById("screen").value=result;
+}
+
+function clearScreen(){
+    document.getElementById("screen").value="";
+}
+
+function operation(opt){
+    first=parseInt(document.getElementById("screen").value);
+    operator=opt
+    clearScreen()
+}
+
+function digit(dit){
+    if(dit=="0"){
+        if (document.getElementById("screen").value!=""){
+            document.getElementById("screen").value+="0";
+        }
+    }
+    else
+        document.getElementById("screen").value+= dit
+        }
+
+</script>
+
+<table border='1'>
+    <tr>
+        <td colspan='4'><input id="screen"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="digit('0')"></td>
+        <td><input type="button" value="1" onclick="digit('1')"></td>
+        <td><input type="button" value="2" onclick="digit('2')"></td>
+        <td><input type="button" value="+" onclick="operation('+')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="3" onclick="digit('3')"></td>
+        <td><input type="button" value="4" onclick="digit('4')"></td>
+        <td><input type="button" value="5" onclick="digit('5')"></td>
+        <td><input type="button" value="-" onclick="operation('-')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="6" onclick="digit('6')"></td>
+        <td><input type="button" value="7" onclick="digit('7')"></td>
+        <td><input type="button" value="8" onclick="digit('8')"></td>
+        <td><input type="button" value="x" onclick="operation('x')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="9" onclick="digit('9')"></td>
+        <td><input type="button" value="C" onclick="clearScreen()"></td>
+        <td><input type="button" value="=" onclick="displayresult()"></td>
+        <td><input type="button" value="/" onclick="operation('/')"></td>
+    </tr>
+
+
+
+
+
+
+
+</table>
+
+
+
+</html>

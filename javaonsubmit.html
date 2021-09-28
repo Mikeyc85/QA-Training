@@ -1,0 +1,46 @@
+<html>
+    <a href=https://bbc.co.uk><h1><font color='blue'> BBC</font></h1></a>
+<script>
+
+function checking(){
+    document.getElementById("errName").style.visibility="hidden";
+    document.getElementById("errEmail").style.visibility="hidden";
+    document.getElementById("errPhone").style.visibility="hidden";
+
+    if (document.getElementById("name").value==""){
+        document.getElementById("errName").style.visibility="visible";
+        event.preventDefault();
+    }
+    if (document.getElementById("email").value==""){
+        document.getElementById("errEmail").style.visibility="visible";
+        event.preventDefault();
+    }else{ 
+        let emailaddress=document.getElementById("email").value;
+        let count=0
+        for(let i=0;i<emailaddress.length;i+=1){
+            if(emailaddress.substring(i,i+1)=="@"){
+                count+=1;
+            }
+        }
+        if (count==0){
+            document.getElementById("errEmail").innerHTML="Invalid Email Address"
+            document.getElementById("errEmail").style.visibility="visible";
+            event.preventDefault();
+        }
+    }
+    if(document.getElementById("phone").value==""){
+        document.getElementById("errPhone").style.visibility="visible";
+        event.preventDefault();
+    }
+}
+
+
+</script>
+
+<form action="https:www.bbc.co.uk" onsubmit="checking()">
+Enter Name: <input id="name"><span id="errName"style="color:red;visibility:hidden">Name is missing</span><br>
+Enter Email Address: <input id="email"><span id="errEmail"style="color:red;visibility:hidden">Email is missing</span><br>
+Enter Phone Number: <input id="phone"><span id="errPhone"style="color:red;visibility:hidden">Phone Number is missing</span><br>
+<input type="submit">
+</form>
+</html>
