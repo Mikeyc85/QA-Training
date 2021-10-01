@@ -1,0 +1,38 @@
+<html>
+
+<font color=blue><h1>Simple Addition Calculator</h1></font>
+
+Enter First Number:
+<input id="no1"> <br>
+Enter Second Number:
+<input id="no2"> <br>
+<input type="button" value="+" onclick="addition()"><br>
+Result is: <input id="result">
+
+<script>
+
+document.getElementById("no1").focus();
+
+function addition(){
+
+    let first=document.getElementById("no1").value;
+    let second=document.getElementById("no2").value;
+
+    if(first==""){
+        alert("Please Enter First Number");
+        document.getElementById("no1").focus();
+    }else{
+        if (second==""){
+            alert("Please Enter The Second Number");
+            document.getElementById("no2").focus();
+        }else{
+            let res=parseInt(first)+parseInt(second);
+            document.getElementById("result").value=res
+        }
+    }
+
+}
+</script>
+
+
+</html>

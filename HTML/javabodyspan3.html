@@ -1,0 +1,42 @@
+<html>
+
+<script>
+
+function dosomething(){
+
+    document.getElementById("s").style.top=event.clientY;
+    document.getElementById("s").style.left=event.clientX;
+
+}
+function changered(){
+    document.getElementById("s").style.color="red"
+}
+function changegreen(){
+    document.getElementById("s").style.color="green"
+}
+function incfont(){
+    document.getElementById("s").style.fontSize=30
+}
+function decfont(){
+    document.getElementById("s").style.fontSize=9
+}
+
+</script>
+
+<body onmousemove="dosomething()"> </body>
+
+<input type="Button" value="Red" onmouseenter="changered()">
+<br>
+<br>
+<input type="Button" value="Green" onmouseenter="changegreen()">
+<br>
+<br>
+<input type="Button" value="Increase Font" onmouseenter="incfont()">
+<br>
+<br>
+<input type="Button" value="Decrease Font" onmouseenter="decfont()">
+
+<span style="position:absolute;" id="s"> Michael </span>
+
+
+</html>

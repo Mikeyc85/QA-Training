@@ -1,0 +1,2 @@
+Query to produce income, tax and net profit together
+select product, (price_sold - price_purchased)*quantity_sold as Income, ((price_sold - price_purchased)*quantity_sold)*21/100 as Tax, ((price_sold - price_purchased)*quantity_sold)-((price_sold - price_purchased)*quantity_sold)*21/100 as "Net Profit" from asda
