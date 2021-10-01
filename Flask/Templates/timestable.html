@@ -1,0 +1,13 @@
+<html>
+    <a href="http://localhost:5000"> Homepage </a>
+    <center> <h1> Times Table of {{T}} </h1></center>
+
+    {% for a in range (1,11) %}
+
+    {{T}} x {{a}} = {{ T*a }}
+    <br>
+
+    {% endfor %}
+
+
+</html>
