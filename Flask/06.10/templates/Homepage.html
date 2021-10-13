@@ -1,0 +1,47 @@
+<html>
+    <center> <h1> Welcome to Employees Information System </h1></center>
+
+<a href="http://localhost:5000/personalInfo_entry"> New Employee </a>
+<br>
+<br>
+<center>
+<table border= '1'>
+    <tr>
+        <th>S. No</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Country</th>        
+        <th>Operations</th>
+    </tr>
+
+{% for record in records %}
+
+    <tr>
+        <td>   </td>
+        <td> {{record[1]}}
+        </td>
+        <td><a href="http://localhost:5000/departmentlist/{{record[2]}}">
+        {% if record[2]=="HR"%}
+            Human Resources
+        {%endif%}
+
+        {% if record[2]=="IT"%}
+            Information Tech
+        {%endif%}
+
+        {% if record[2]=="Sales"%}
+            Sales Team
+        {%endif%}</a>
+</td>
+<td> <a href="http://localhost:5000/countryvizlist/{{record[4]}}">{{record [4]}}</a></td>
+
+        <td> <a href="http://localhost:5000/deleteemployee/{{record[0]}}">Delete</a>,
+            <a href="http://localhost:5000/editemployee/{{record[0]}}">Edit</a>,
+            details  </td>
+    </tr>
+
+{% endfor%}
+
+</table>
+</center>
+</html>

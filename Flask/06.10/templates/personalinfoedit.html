@@ -1,0 +1,25 @@
+<html>
+    <center> <h1> Your Registration Form </h1></center>
+
+<form action="http://localhost:5000/personalInfo_edit" method="post">
+<input type="hidden" name="empno" value={{record[0]}}>
+Name:<input name="name" value='{{record[1]}}'> <br>
+Department:
+    <select name="department">
+        <option value="HR"> Human Resources</option>
+        <option value="IT"> Information Tech</option>
+        <option value ="Sales"> Sales Team</option>
+</select> <br>
+Address:<input type="text" name="address" value='{{record[3]}}'><br>
+Country:
+    <select name="country">
+        <option value = "England"> England </option>
+        <option value = "Scotland"> Scotland </option>
+        <option value = "Wales"> Wales </option>
+        <option value = "Ireland"> Ireland </option>
+    </select><br>
+
+<input type="submit">
+</form>
+
+</html>

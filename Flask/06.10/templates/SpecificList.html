@@ -1,0 +1,39 @@
+<html>
+
+    <center> <h1> {{message}} </h1></center>
+
+<br>>
+Number of Employees:{{number}}<br>
+<a href="http://localhost:5000"> Homepage </a>
+<center><table border='1'>
+{% for record in records %}
+
+    <tr>
+        <td>   </td>
+        <td> {{record[1]}}
+        </td>
+        <td>{% if record[2]=="HR"%}
+            Human Resources
+        {%endif%}
+
+        {% if record[2]=="IT"%}
+            Information Tech
+        {%endif%}
+
+        {% if record[2]=="Sales"%}
+            Sales Team
+    {%endif%}
+</td>
+<td> <a href="http://localhost:5000/countryvizlist/{{record[4]}}">{{record [4]}}</a></td>
+
+        <td> <a href="http://localhost5000/deleteemployee/{{record[0]}}">delete</a>,
+            <a href="http://localhost:5000/editemployee/{{record[0]}}">Edit</a>,
+            details  </td>
+    </tr>
+
+{% endfor%}
+
+</table>
+</center>
+
+</html>
